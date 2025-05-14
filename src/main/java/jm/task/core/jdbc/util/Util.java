@@ -29,15 +29,6 @@ public class Util {
     private Util() {
     }
 
-    public static Connection getConnection() {
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            return DriverManager.getConnection(URL, USER, PASSWORD);
-        } catch (SQLException | ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
     public static SessionFactory getSessionFactory() {
         if (sessionFactory == null || sessionFactory.isClosed()) {
             try {
